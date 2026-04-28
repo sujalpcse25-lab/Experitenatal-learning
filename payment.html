@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <link rel ="stylesheet" href="css files/style.css">
+</head>
+<body>
+  <header>
+    <h1>Workshop Registration</h1>
+    <h1>Payment</h1>
+    <p>Choose your payment method</p>
+  </header>
+
+  <nav>
+    <a href="dot.html">Home</a> |
+    <a href="registration.html">Registration</a> |
+    <a href="support.html">Support</a>
+  </nav>
+  <section>
+    <form action="#" method="post">
+      <h2>Payment Method</h2>
+
+      <input type="radio" id="credit" name="payment-method" value="credit" checked>
+      <label for="credit">Credit Card</label><br>
+      
+      <input type="radio" id="netbanking" name="payment-method" value="netbanking">
+      <label for="netbanking">Net Banking</label><br><br>
+
+    <label for="cardnumber">Card Number</label><br>
+    <input type="text" id="cardnumber" name="cardnumber" placeholder="xxxx xxxx xxxx xxxx"><br><br>
+
+    <label for="expiry">Expiry Date</label><br>
+    <input type="text" id="expiry" name="expiry" placeholder="MM/YY"><br><br>
+
+    <label for="cvv">CVV</label><br>
+    <input type="password" id="cvv" name="cvv" placeholder="123"><br><br>
+    
+    
+
+    <label for="accname">Account Holder Name</label><br>
+    <input type="text" id="accname" name="accname" placeholder="Enter account holder name"><br><br>
+
+    <label for="bank">Select Bank</label><br>
+    <select id="bank" name="bank">
+      <option value="sbi">State Bank of India (SBI)</option>
+      <option value="hdfc">HDFC Bank</option>
+      <option value="axis">Axis Bank</option>
+      <option value="bob">Bank of Baroda</option>
+      <option value="union">Union Bank</option>
+    </select><br><br>
+
+    <label for="accnum">Account Number</label><br>
+    <input type="text" id="accnum" name="accnum" placeholder="Enter account number"><br><br>
+
+    <button type="submit">Pay Now</button>
+
+    <p>
+        <marquee behavior="scroll" direction="left">
+          Early registration discount available! Register now!
+        </marquee>
+    </p>
+    </form>
+  </section>
+<div class="image-container">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.Gj4NqCHOISeOVRpjwuX7ugHaEj?rs=1&pid=ImgDetMain&o=7&rm=3">
+</div>
+
+
+  <footer>
+    <p>© 2026 Workshop Registration.</p>
+  </footer>
+</body>
+</html>
