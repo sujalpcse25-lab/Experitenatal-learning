@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Payment Page</title>
-  <link rel ="stylesheet" href="style.css">
+  <link rel ="stylesheet" href="css files/style.css">
 </head>
 <body>
   <header>
@@ -18,14 +18,16 @@
   </nav>
   <section>
     <form action="#" method="post">
-      <h2>Payment Method</h2>
+  <h2>Payment Method</h2>
 
-      <input type="radio" id="credit" name="payment-method" value="credit" checked>
-      <label for="credit">Credit Card</label><br>
-      
-      <input type="radio" id="netbanking" name="payment-method" value="netbanking">
-      <label for="netbanking">Net Banking</label><br><br>
+  <input type="radio" id="credit" name="payment-method" value="credit" checked>
+  <label for="credit">Credit Card</label><br>
+  
+  <input type="radio" id="netbanking" name="payment-method" value="netbanking">
+  <label for="netbanking">Net Banking</label><br><br>
 
+  <!-- Credit Card Fields -->
+  <div id="credit-fields">
     <label for="cardnumber">Card Number</label><br>
     <input type="text" id="cardnumber" name="cardnumber" placeholder="xxxx xxxx xxxx xxxx"><br><br>
 
@@ -34,9 +36,10 @@
 
     <label for="cvv">CVV</label><br>
     <input type="password" id="cvv" name="cvv" placeholder="123"><br><br>
-    
-    
+  </div>
 
+  <!-- Net Banking Fields -->
+  <div id="netbanking-fields" style="display:none;">
     <label for="accname">Account Holder Name</label><br>
     <input type="text" id="accname" name="accname" placeholder="Enter account holder name"><br><br>
 
@@ -51,15 +54,10 @@
 
     <label for="accnum">Account Number</label><br>
     <input type="text" id="accnum" name="accnum" placeholder="Enter account number"><br><br>
+  </div>
 
-    <button type="submit">Pay Now</button>
-
-    <p>
-        <marquee behavior="scroll" direction="left">
-          Early registration discount available! Register now!
-        </marquee>
-    </p>
-    </form>
+  <button type="submit">Pay Now</button>
+</form>
   </section>
 <div class="image-container">
   <img src="https://tse2.mm.bing.net/th/id/OIP.Gj4NqCHOISeOVRpjwuX7ugHaEj?rs=1&pid=ImgDetMain&o=7&rm=3">
@@ -70,4 +68,40 @@
     <p>© 2026 Workshop Registration.</p>
   </footer>
 </body>
+<script>
+  function handlePaymentSubmit(event) {
+    event.preventDefault();
+    alert("Payment successful! Redirecting to support page...");
+    window.location.href = "support.html";
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const payForm = document.querySelector("form");
+    if (payForm) {
+      payForm.addEventListener("submit", handlePaymentSubmit);
+    }
+
+    const creditRadio = document.getElementById("credit");
+    const netbankingRadio = document.getElementById("netbanking");
+    const creditFields = document.getElementById("credit-fields");
+    const netbankingFields = document.getElementById("netbanking-fields");
+
+    function toggleFields() {
+      if (creditRadio.checked) {
+        creditFields.style.display = "block";
+        netbankingFields.style.display = "none";
+      } else if (netbankingRadio.checked) {
+        creditFields.style.display = "none";
+        netbankingFields.style.display = "block";
+      }
+    }
+
+    // Run once on page load
+    toggleFields();
+
+    // Add event listeners
+    creditRadio.addEventListener("change", toggleFields);
+    netbankingRadio.addEventListener("change", toggleFields);
+  });
+</script>
 </html>
