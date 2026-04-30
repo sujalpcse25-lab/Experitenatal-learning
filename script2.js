@@ -5,7 +5,7 @@
     window.location.href = "support.html";
   }
 
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {ds
     const payForm = document.querySelector("form");
     if (payForm) {
       payForm.addEventListener("submit", handlePaymentSubmit);
